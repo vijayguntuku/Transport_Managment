@@ -1,0 +1,6 @@
+id,name,boarding_time,route_id
+1001,balanagar,"8.15 am",1
+1002,kukutpally,"8.00 am",2
+1003,boolaram,"7.45 am",2
+1004,kompally,"8.30 am",4
+1005,bowenpally,"8.30 am",5

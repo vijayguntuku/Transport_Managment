@@ -1,0 +1,6 @@
+id,name,mobile,email,gender,year,valid_upto,college_id
+101,vijay,8376891817,vijay@gmail.com,male,2,1,1
+102,Vamshi,8333891817,vamshi@gmail.com,male,4,1,2
+103,Anusha,8333551857,anu@gmail.com,female,2,2,1
+104,Varsha,9333551822,varsha@gmail.com,female,1,4,4
+105,Abhi,9876551822,abhi@gmail.com,male,2,2,2

@@ -1,0 +1,41 @@
+show databases;
+use modified_transport;
+show tables;
+select * from bus;
+create table driver(id int primary key,name varchar(50) not null,mobile varchar(50) not null unique key,salary int not null,bus_id int not null unique key,foreign key(bus_id) references bus(id));
+insert into driver values(25,"Vamshi","9377726664",20000,15);
+create table bus_incharge(id int ,name varchar(50) not null , foreign key(id) references bus(bus_incharge_id));
+create table college (id int not null primary key, name varchar(50) not null);
+create table passenger(id int not null primary key,name varchar(50) not null,mobile varchar(50) unique key not null,email varchar(50) unique key not null,gender varchar(50) not null,year int ,valid_upto int not null,college_id int not null, foreign key(college_id) references college(id));
+insert into passenger values(102,"Vamshi","8333891817","vamshi@gmail.com","male",4,1,2);
+insert into college values(1,"cmrtc"),(2,"cmrec"),(3,"cmrk"),(4,"cmrit");
+insert into passenger values(105,"Abhi","9876551822","abhi@gmail.com","male",2,2,2);
+create table payment_invoice (id int not null primary key,passenger_id int not null unique key,pay_mode varchar(50) not null,pay_id varchar(50) unique key not null,recipet_no varchar(50) not null unique key,total_amount int not null,paid_amount int not null,due_amount int not null,foreign key(passenger_id) references passenger(id));
+insert into payment_invoice values(201, 101, 'Online', 'trans122323121', 'CMRGI21042021003441', 20000, 10000,10000);
+drop table payment_invoice;
+insert into payment_invoice values(205, 105, 'Online', 'trans433252242144', 'CMRk223445021033', 29000, 15000,14000);
+create table passenger_boarding(id int primary key,passenger_id int not null ,boarding_id int not null ,unique key(passenger_id , boarding_id),foreign key(passenger_id) references passenger(id) ,foreign key(boarding_id) references boarding_point(id));
+
+select *from bus;
+select * from college;
+alter table bus add foreign key(college_id) references college(id);
+create table bus_incharge(id int not null primary key ,name varchar(50) not null);
+alter table bus add foreign key(bus_incharge_id) references bus_incharge(id);
+insert into bus_incharge values(115,"Swetha");
+alter table bus drop college_id;
+drop table bus_incharge;
+alter table bus_incharge add mobile_no varchar(50) unique key;
+insert into bus_incharge(mobile_no) values("9381743675","9704987205","998767812","9705277022","9154331796");
+update bus_incharge set mobile_no = "9778982225" where id =115;
+show tables;
+select * from passenger;
+select * from bus_incharge;
+select * from route;
+select * from boarding_point;
+update  boarding_point set id = 1005 where route_id = 5;
+insert into passenger_boarding values(1,101,1001),(2,102,1002),(3,103,1003),(4,104,1004),(5,105,1005);
+select * from passenger_boarding;
+select * from payment_invoice;
+select * from driver;
+
+

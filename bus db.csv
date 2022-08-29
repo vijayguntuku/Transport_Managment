@@ -1,0 +1,6 @@
+id,route_id,vehicle_no,bus_incharge_id,capacity,occupied
+11,1,AP07CP5676,111,60,40
+12,2,AP03CP7776,112,55,50
+13,3,TS22CP7776,113,70,60
+14,4,TS03AA7646,114,70,60
+15,5,TS12RE4567,115,50,50
